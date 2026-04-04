@@ -377,23 +377,7 @@ p{color:var(--t2);line-height:1.75}
 .sol-desc{font-size:12.5px;color:var(--t2);line-height:1.65}
 
 /* ── NEWS CARD ── */
-.news-banner{background:var(--navy);padding:0 28px}
-.news-banner-inner{max-width:1120px;margin:0 auto;display:flex;align-items:stretch;gap:0}
-.news-source{display:flex;align-items:center;gap:10px;padding:26px 32px 26px 0;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0}
-.news-source-label{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px}
-.news-source-name{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.02em;white-space:nowrap}
-.news-source-date{font-family:var(--mono);font-size:9.5px;color:rgba(255,255,255,.35);margin-top:3px}
-.news-content{padding:26px 0 26px 32px;flex:1}
-.news-headline{font-size:16px;font-weight:700;color:#fff;line-height:1.5;letter-spacing:-.025em;margin-bottom:9px}
-.news-summary{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.75}
-.news-summary strong{color:#fff;font-weight:700}
-.news-tag{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15)}
-@media(max-width:760px){
-  .news-banner-inner{flex-direction:column}
-  .news-source{border-right:none;border-bottom:1px solid rgba(255,255,255,.12);padding:20px 0 16px}
-  .news-content{padding:16px 0 20px}
-  .news-headline{font-size:15px}
-}
+
 
 
 /* ── PRODUCT WALKTHROUGH ── */
@@ -680,13 +664,6 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
   .sec{padding:56px 20px}
   .wrap,.wrap-sm{padding:0 18px}
 
-  /* ── NEWS BANNER ── */
-  .news-banner{padding:0 18px}
-  .news-banner-inner{flex-direction:column}
-  .news-source{border-right:none;border-bottom:1px solid rgba(255,255,255,.12);padding:18px 0 14px;flex-direction:row;align-items:center;gap:12px}
-  .news-source-name{font-size:13px}
-  .news-content{padding:14px 0 20px}
-  .news-headline{font-size:14px}
   .news-summary{font-size:12.5px}
 
   /* ── PROBLEM SECTION ── */
@@ -801,7 +778,6 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
       <p class="hero-sub">작성은 빨라졌지만, <strong>믿고 승인할 방법은 그대로입니다.</strong> Sentinel은 문서의 위험 신호를 먼저 잡고, 검토와 승인 흐름을 구조화합니다.</p>
       <div class="hero-btns">
         <a href="#partner" class="btn btn-primary">디자인 파트너 신청하기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        <a href="#feedback" class="btn btn-outline">5분 피드백 남기기</a>
       </div>
     </div>
 
@@ -1227,33 +1203,20 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
 
 
 
-<!-- NEWS BANNER -->
-<div class="news-banner">
-  <div class="news-banner-inner">
-    <div class="news-source">
-      <div>
-        <div class="news-source-label">보도</div>
-        <div class="news-source-name">동아일보</div>
-        <div class="news-source-date">2026. 02. 01</div>
-      </div>
-    </div>
-    <div class="news-content">
-      <div class="news-headline">AI 도입 이후 개인 생산성은 올랐지만, 조직 성과는 제자리 — "병목이 '작성'에서 '검토'로 이동했다"</div>
-      <p class="news-summary">AI로 문서 작성 속도는 높아졌지만 <strong>검토·통합·조율에 드는 내부 조정비용이 기하급수적으로 증가</strong>하면서, 수익성·의사결정 속도 같은 거시 성과 지표는 크게 개선되지 않고 있다는 분석이 나온다. 전문가들은 업무 병목이 '작성' 단계가 아니라 <strong>'검토' 단계로 이동했다</strong>고 지적한다.</p>
-      <span class="news-tag">AI 생산성 패러독스</span>
-    </div>
-  </div>
-</div>
-
 <!-- PROBLEM -->
 <section id="problem" class="sec sec-white border-t">
   <div class="wrap">
 
     <!-- Evidence 한 줄 -->
-    <div class="rev" style="margin-bottom:52px;max-width:680px">
+    <div class="rev" style="margin-bottom:52px;max-width:720px">
       <div class="eyebrow">왜 지금 필요한가</div>
       <h2>검증되지 않은 문서가<br>실제 제재로 이어지고 있습니다</h2>
-      <p style="margin-top:12px;font-size:15px;color:var(--t2)">비약적으로 늘어난 문서 생성 속도를 통제하지 못한 결과입니다.</p>
+      <p style="margin-top:12px;font-size:15px;color:var(--t2);line-height:1.75">비약적으로 늘어난 문서 생성 속도를 통제하지 못한 결과입니다.</p>
+      <!-- 동아일보 인용 — 문제 맥락으로 자연스럽게 -->
+      <div style="margin-top:24px;padding:18px 22px;background:#f9f8f5;border-left:3px solid var(--navy);border-radius:0 8px 8px 0">
+        <p style="font-size:13.5px;color:#374151;line-height:1.75;margin:0">"AI 도입으로 개인 산출량은 높아졌지만, <strong style="color:#000">검토·통합·조율에 드는 내부 조정비용이 기하급수적으로 증가</strong>하면서 업무 병목이 <strong style="color:#000">'작성'에서 '검토'로 이동했다</strong>는 목소리가 커지고 있다."</p>
+        <div style="margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--t3)">동아일보 · 2026.02.01</div>
+      </div>
     </div>
 
     <!-- 사고 사례 3개 — 가로 3열 -->
@@ -1569,7 +1532,6 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
     <p>Sentinel은 지금 디자인 파트너를 모집하고 있습니다.</p>
     <div class="cta-btns">
       <a href="#partner" class="btn btn-white">디자인 파트너 신청하기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#feedback" class="btn btn-ghost-white">5분 피드백 남기기</a>
     </div>
   </div>
 </section>
@@ -1625,11 +1587,26 @@ function toggleFaq(btn){
 }
 
 // ── Forms ──
-document.getElementById('partnerForm').addEventListener('submit',e=>{
+document.getElementById('partnerForm').addEventListener('submit',async function(e){
   e.preventDefault();
-  document.getElementById('partnerForm').style.display='none';
-  document.querySelector('#partnerFormWrap .form-title').style.display='none';
-  document.getElementById('partnerSuccess').style.display='block';
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const res = await fetch('https://formspree.io/f/mzdkjqgn', {
+      method: 'POST',
+      body: data,
+      headers: {'Accept': 'application/json'}
+    });
+    if(res.ok){
+      form.style.display='none';
+      document.querySelector('#partnerFormWrap .form-title').style.display='none';
+      document.getElementById('partnerSuccess').style.display='block';
+    } else {
+      alert('제출 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    }
+  } catch(err) {
+    alert('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+  }
 });
 
 
