@@ -346,12 +346,13 @@ p{color:var(--t2);line-height:1.75}
 /* ── PROBLEM ── */
 .problem-intro{max-width:680px;margin-bottom:52px}
 .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0}
-.case-card{background:var(--white);border:1px solid var(--bd2);border-radius:14px;padding:22px;transition:all .2s}
-.case-card:hover{border-color:var(--bd);box-shadow:0 4px 20px rgba(0,0,0,.07)}
-.case-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:8px}
-.case-incident{font-size:14.5px;font-weight:800;color:#000;line-height:1.38;margin-bottom:8px;letter-spacing:-.02em}
-.case-detail{font-size:12.5px;color:var(--t2);line-height:1.65}
-.case-consequence{margin-top:12px;padding-top:12px;border-top:1px solid var(--bd2);font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:6px}
+.case-card{background:var(--white);border:1.5px solid var(--bd);border-radius:14px;padding:26px;transition:all .2s;position:relative;overflow:hidden}
+.case-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#dc2626;border-radius:0}
+.case-card:hover{box-shadow:0 6px 28px rgba(0,0,0,.09);transform:translateY(-2px)}
+.case-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
+.case-incident{font-size:17px;font-weight:800;color:#000;line-height:1.35;margin-bottom:10px;letter-spacing:-.03em}
+.case-detail{font-size:13px;color:var(--t2);line-height:1.68}
+.case-consequence{margin-top:14px;padding-top:14px;border-top:1px solid var(--bd2);font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px}
 .case-consequence.red{color:#dc2626}
 .case-consequence.amber{color:#b45309}
 
@@ -1237,7 +1238,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
     <!-- Evidence 한 줄 -->
     <div class="rev" style="margin-bottom:52px;max-width:720px">
       <div class="eyebrow">왜 지금 필요한가</div>
-      <h2>검증되지 않은 문서가<br>실제 제재로 이어지고 있습니다</h2>
+      <h2>작은 문서 오류도,<br>조직에선 큰 비용과 책임으로 돌아옵니다</h2>
       <p style="margin-top:12px;font-size:15px;color:var(--t2);line-height:1.75">비약적으로 늘어난 문서 생성 속도를 통제하지 못한 결과입니다.</p>
       <!-- 동아일보 인용 — 문제 맥락으로 자연스럽게 -->
       <div style="margin-top:24px;padding:18px 22px;background:#f9f8f5;border-left:3px solid var(--navy);border-radius:0 8px 8px 0">
@@ -1247,21 +1248,24 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
     </div>
 
     <!-- 사고 사례 3개 — 가로 3열 -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px" class="rev">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:52px" class="rev">
       <div class="case-card">
         <div class="case-tag">캔자스 연방법원 · 2026.02</div>
-        <div class="case-incident">AI 가짜 판례 서면 제출<br>→ 벌금 1만 2천 달러</div>
-        <div class="case-consequence red" style="margin-top:14px;padding-top:0;border:none"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>검증 없는 문서 = 법적 제재</div>
+        <div class="case-incident">AI 가짜 판례 서면 제출 — 벌금 1만 2천 달러</div>
+        <div class="case-detail">존재하지 않는 판례 인용이 법원 서면에 그대로 제출됐다. "AI가 틀릴 수 있다"는 수준이 아니라 검증 없는 문서가 법적 제재로 직결됐다.</div>
+        <div class="case-consequence red"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>검증 없는 문서 = 법적 제재</div>
       </div>
       <div class="case-card">
-        <div class="case-tag">Latham &amp; Watkins · 2025.05</div>
-        <div class="case-incident">AI 생성 오인용 보고서 제출<br>→ 판사 "매우 심각한 문제"</div>
-        <div class="case-consequence red" style="margin-top:14px;padding-top:0;border:none"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>로펌 전체 검토 체계 추가 강제</div>
+        <div class="case-tag">정부 보고서 · AI 오인용</div>
+        <div class="case-incident">237페이지 보고서 가짜 출처 — 계약금 환불</div>
+        <div class="case-detail">AI 보조로 작성된 정부 보고서에서 가짜 출처와 오인용이 발견됐다. 문제는 AI가 썼다는 사실이 아니라, 외부 제출 전 검증할 구조가 없었다는 점이다.</div>
+        <div class="case-consequence red"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>외부 제출 전 검증 구조 부재</div>
       </div>
       <div class="case-card">
         <div class="case-tag">한국 상장사 · 2026.01~02</div>
-        <div class="case-incident">불성실공시 지정 예고<br>전년 동기 대비 59% 급증</div>
-        <div class="case-consequence red" style="margin-top:14px;padding-top:0;border:none"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>7월부터 상장폐지 기준 추가 강화</div>
+        <div class="case-incident">불성실공시 지정 예고 전년 동기 대비 59% 급증</div>
+        <div class="case-detail">코스피·코스닥 시장 전반에서 공시 번복과 지연이 반복되고 있다. 7월부터 상장폐지 기준 벌점이 10점~15점 구간에서 강화된다.</div>
+        <div class="case-consequence red"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>상장폐지 기준 강화 — 더 높아진 위험</div>
       </div>
     </div>
 
@@ -1530,10 +1534,26 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
   <div class="wrap">
     <div class="rev"><div class="eyebrow">대상</div><h2>이 문제를 겪고 있는<br>팀을 위해 만들었습니다</h2></div>
     <div class="target-grid">
-      <div class="tc rev"><div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><h3>IR / 공시 담당자</h3><p>공시자료와 IR 문서를 빠르게 검토해야 하지만 작은 오류도 큰 문제로 이어질 수 있는 팀</p></div>
-      <div class="tc rev" style="transition-delay:.07s"><div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>법무팀</h3><p>외부 문서의 표현과 리스크를 반복적으로 검토해야 하는 팀</p></div>
-      <div class="tc rev" style="transition-delay:.14s"><div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3>전략 / 기획팀</h3><p>외부 제안서, 보고서, 중요 문서를 여러 단계 승인해야 하는 팀</p></div>
-      <div class="tc rev" style="transition-delay:.21s"><div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>법무·회계·IR 파트너</h3><p>고객사의 대외 문서 검토와 승인 과정에 함께 참여하는 전문 서비스 조직</p></div>
+      <div class="tc rev">
+        <div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>영업 · 전략팀</h3>
+        <p>고객 제출 문서와 제안서를 반복 검토하는 팀. 검토가 느릴수록 기회를 잃는다.</p>
+      </div>
+      <div class="tc rev" style="transition-delay:.07s">
+        <div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>운영팀</h3>
+        <p>품질·규정·감사 대응 문서를 관리하는 팀. 한 번의 실수가 감사 지적으로 돌아온다.</p>
+      </div>
+      <div class="tc rev" style="transition-delay:.14s">
+        <div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>법무 · 컴플라이언스</h3>
+        <p>외부 문서의 법적 리스크를 매번 직접 검토해야 하는 중견기업 조직.</p>
+      </div>
+      <div class="tc rev" style="transition-delay:.21s">
+        <div class="tc-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>문서는 많지만 승인은 이메일</h3>
+        <p>카카오톡·이메일로 승인을 돌리고 있다면, 그 팀이 바로 Sentinel이 필요한 팀입니다.</p>
+      </div>
     </div>
   </div>
 </section>
