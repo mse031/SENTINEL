@@ -516,6 +516,33 @@ p{color:var(--t2);line-height:1.75}
   .wt-law-main{padding:10px}
 }
 
+/* ── SECURITY ── */
+.sec-security{padding:88px 28px;background:#0a0a0a}
+.security-inner{max-width:1120px;margin:0 auto}
+.security-header{max-width:600px;margin-bottom:52px}
+.security-eyebrow{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4b5563;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.security-eyebrow::after{content:'';flex:1;height:1px;background:#1f2937;max-width:60px}
+.security-h2{font-size:clamp(24px,3vw,38px);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.03em;margin-bottom:12px}
+.security-sub{font-size:15px;color:#e5e7eb;line-height:1.75}
+.security-sub strong{color:#fff}
+.security-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a1a1a;border-radius:14px;overflow:hidden}
+.sec-card{background:#111;padding:28px 24px;transition:background .2s}
+.sec-card:hover{background:#161616}
+.sec-card-icon{width:36px;height:36px;border-radius:10px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:#6b7280}
+.sec-card-title{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:8px}
+.sec-card-desc{font-size:13.5px;color:#d1d5db;line-height:1.7}
+.sec-card-desc strong{color:#fff;font-weight:700}
+.security-note{margin-top:16px;background:#111;border-radius:10px;padding:16px 20px;display:flex;align-items:flex-start;gap:10px;border:1px solid #1f2937}
+.security-note-icon{flex-shrink:0;color:#374151;margin-top:1px}
+.security-note-text{font-size:13px;color:#9ca3af;line-height:1.65}
+@media(max-width:960px){.security-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  .sec-security{padding:56px 18px}
+  .security-grid{grid-template-columns:1fr}
+  .sec-card{padding:22px 18px}
+  .security-h2{font-size:24px}
+}
+
 /* ── COMPARE ── */
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cmp-card{border-radius:14px;padding:24px}
@@ -756,7 +783,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
       <li><a href="#partner">디자인 파트너</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#partner" class="btn btn-primary" style="font-size:12px;padding:8px 18px">디자인 파트너 신청</a>
+    <a href="#partner" class="btn btn-primary" style="font-size:12px;padding:8px 18px">지금 신청하기</a>
     <button class="nav-hamburger" id="hamBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
   </div>
 </header>
@@ -766,7 +793,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
   <a href="#target" class="mobile-link">대상</a>
   <a href="#partner" class="mobile-link">디자인 파트너</a>
   <a href="#faq" class="mobile-link">FAQ</a>
-  <a href="#partner" class="btn btn-primary mobile-link">디자인 파트너 신청</a>
+  <a href="#partner" class="btn btn-primary mobile-link">지금 신청하기</a>
 </div>
 
 <!-- HERO -->
@@ -1422,6 +1449,52 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px}
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- SECURITY -->
+<section class="sec-security">
+  <div class="security-inner">
+    <div class="security-header rev">
+      <div class="security-eyebrow">보안</div>
+      <div class="security-h2">민감한 문서를 다루는 제품이기에,<br>보안은 기본 전제입니다</div>
+      <p class="security-sub">Sentinel은 기업 내부의 미공개 문서와 의사결정 흐름을 다룹니다. <strong>설계 단계부터 보안을 전제로 구축합니다.</strong></p>
+    </div>
+    <div class="security-grid">
+      <div class="sec-card rev">
+        <div class="sec-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="sec-card-title">암호화</div>
+        <p class="sec-card-desc">전송 구간은 <strong>TLS</strong>로 보호하고, 저장 데이터는 암호화 전제로 설계합니다. 문서가 이동하거나 저장되는 모든 지점에서 평문 노출을 차단합니다.</p>
+      </div>
+      <div class="sec-card rev" style="transition-delay:.05s">
+        <div class="sec-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="sec-card-title">권한 통제</div>
+        <p class="sec-card-desc">역할 기반 접근 제어로 <strong>작성자·관리자·열람자</strong> 권한을 분리합니다. SSO·MFA 연동을 고려해 기업 인증 체계와 통합됩니다.</p>
+      </div>
+      <div class="sec-card rev" style="transition-delay:.1s">
+        <div class="sec-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="sec-card-title">격리</div>
+        <p class="sec-card-desc"><strong>테넌트 단위 데이터 분리</strong>로 고객사 간 접근 경계를 보장합니다. A사의 문서가 B사 환경에서 접근되는 구조적 가능성을 차단합니다.</p>
+      </div>
+      <div class="sec-card rev" style="transition-delay:.15s">
+        <div class="sec-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l4 2"/></svg>
+        </div>
+        <div class="sec-card-title">감사 가능성</div>
+        <p class="sec-card-desc">열람·승인·예외 처리 모든 이력이 <strong>타임스탬프와 함께 기록</strong>됩니다. 누가 언제 무엇을 봤고 어떤 근거로 결정했는지 언제든 확인할 수 있습니다.</p>
+      </div>
+    </div>
+    <div class="security-note">
+      <svg class="security-note-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p class="security-note-text">보안 요구사항이나 컴플라이언스 기준이 있다면 파일럿 신청 시 함께 알려주세요. 요건에 맞춰 논의합니다.</p>
     </div>
   </div>
 </section>
