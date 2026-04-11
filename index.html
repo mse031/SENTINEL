@@ -99,7 +99,7 @@ p{color:var(--t2);line-height:1.75}
 /* ── CASES ── */
 .cases-header{max-width:680px;margin-bottom:48px}
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
-.case-card{background:var(--white);border:1.5px solid var(--bd);border-radius:14px;padding:32px 28px;transition:all .2s;position:relative;overflow:hidden}
+.case-card{background:var(--white);border:1.5px solid var(--bd);border-radius:14px;padding:24px 22px;transition:all .2s;position:relative;overflow:hidden}
 .case-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
 .case-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
 .case-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:12px}
@@ -264,9 +264,9 @@ p{color:var(--t2);line-height:1.75}
 .form-success p{font-size:13.5px;color:var(--t2)}
 
 /* ── FINAL CTA ── */
-#finalcta{background:var(--navy);padding:100px 40px;text-align:center}
+#finalcta{background:var(--navy);padding:100px 40px;text-align:center;color:#fff}
 #finalcta h2{color:#fff;margin-bottom:16px}
-#finalcta p{color:rgba(255,255,255,.6);margin-bottom:36px;font-size:16px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+#finalcta p{color:rgba(255,255,255,.75);margin-bottom:36px;font-size:16px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
 .cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 
 /* ── FAQ ── */
@@ -304,7 +304,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
   .wf-content.on{grid-template-columns:200px 1fr}
   .two-col{grid-template-columns:1fr}
   .prob-three{grid-template-columns:1fr 1fr 1fr}
-  .hero-ui-screen{height:380px}
+  .hero-ui-screen{height:400px}
   .happ-sub{font-size:9px}
 }
 @media(max-width:640px){
@@ -330,10 +330,11 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
   .hero-btns{flex-direction:column;align-items:center;gap:10px;margin-top:24px}
   .hero-btns .btn{width:100%;max-width:300px;justify-content:center;font-size:13px;padding:12px 20px}
   .hero-ui-wrap{margin:40px auto -24px}
-  .hero-ui-screen{height:320px}
+  .hero-ui-screen{height:auto;max-height:none}
   .happ-sub{display:none}
   .happ-right>div:last-child{display:none}
   .hero-panel-right{display:none!important}
+  .hero-ui-wrap{margin:32px auto 0}
 
   /* ── HERO UI SCREEN: 패널 숨기고 문서만 ── */
   .hero-ui-screen > div:last-child > div:last-child{display:none}
@@ -478,7 +479,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
 }
 /* ── HERO UI ── */
 .hero-ui-wrap{margin:64px auto -60px;max-width:960px;position:relative}
-.hero-ui-screen{background:#fff;border:1px solid #ccc9c2;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;height:460px;display:flex;flex-direction:column;min-height:0}
+.hero-ui-screen{background:#fff;border:1px solid #ccc9c2;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;height:460px;display:flex;flex-direction:column;min-height:0;position:relative}
 .happ-bar{height:42px;background:#fff;border-bottom:1px solid #eeeced;display:flex;align-items:center;padding:0 16px;gap:9px;flex-shrink:0}
 .happ-logo{width:20px;height:20px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .happ-name{font-size:12px;font-weight:800;color:#000}
@@ -489,7 +490,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
 .happ-av{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff}
 
 @media(max-width:640px){
-  .hero-ui-screen{height:380px}
+  .hero-ui-screen{height:400px}
   .happ-sub{display:none}
   .hero-ui-wrap{margin-bottom:-30px}
 }
@@ -607,42 +608,34 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
     <div class="cases-header rev">
       <span class="eyebrow">실제 사고 사례</span>
       <h2>작은 문서 오류도 기업에겐<br>큰 위험으로 돌아옵니다</h2>
-      <!-- 동아일보 인용 -->
-      <div style="margin-top:22px;padding:18px 22px;background:var(--white);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;border:1px solid var(--bd);border-left:3px solid var(--navy)">
-        <p style="font-size:13.5px;color:#374151;line-height:1.75;margin:0">"AI 도입으로 개인 산출량은 높아졌지만, <strong style="color:#000">검토·통합·조율에 드는 내부 조정비용이 기하급수적으로 증가</strong>하면서 업무 병목이 <strong style="color:#000">'작성'에서 '검토'로 이동했다</strong>는 목소리가 커지고 있다."</p>
-        <div style="margin-top:9px;font-family:var(--mono);font-size:10px;color:var(--t3)">동아일보 · 2026.02.01</div>
-      </div>
     </div>
 
     <div class="cases-grid rev">
       <div class="case-card">
         <div class="case-tag">공공 보고서 · AI 오인용</div>
-        <div class="case-title">237페이지 보고서<br>가짜 출처 — 계약금 환불</div>
-        <p class="case-desc">AI 보조로 작성된 정부 보고서에서 가짜 출처와 법원 판결문 오인용이 발견됐다. 문제는 AI가 썼다는 사실이 아니라, 외부 제출 전 검증할 구조가 없었다는 점이다.</p>
-        <div class="case-bottom"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>계약금 일부 환불 + 신뢰 훼손</div>
+        <div class="case-title">237페이지 보고서 가짜 출처<br>→ 계약금 환불</div>
+        <div class="case-bottom"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>외부 제출 전 검증 구조 부재</div>
       </div>
       <div class="case-card">
         <div class="case-tag">캔자스 연방법원 · 2026.02</div>
         <div class="case-title">AI 가짜 판례 서면 제출<br>→ 벌금 1만 2천 달러</div>
-        <p class="case-desc">존재하지 않는 판례 인용이 법원 서면에 그대로 제출됐다. "AI가 틀릴 수 있다"는 수준이 아니라 검증 없는 문서가 법적 제재로 직결된 사례다.</p>
         <div class="case-bottom"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>검증 없는 문서 = 법적 제재</div>
       </div>
       <div class="case-card">
         <div class="case-tag">한국 상장사 · 2026.01~02</div>
         <div class="case-title">불성실공시 지정 예고<br>전년 동기 대비 59% 급증</div>
-        <p class="case-desc">코스피·코스닥 시장 전반에서 공시 번복과 지연이 반복되고 있다. 7월부터 상장폐지 기준 벌점이 10점~15점 구간에서 강화된다.</p>
-        <div class="case-bottom"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>상장폐지 기준 강화 — 더 높아진 위험</div>
+        <div class="case-bottom"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>상장폐지 기준 강화</div>
       </div>
     </div>
 
     <div class="cases-closer rev">
-      <p class="cases-closer-text">"문제는 AI가 썼다는 사실이 아닙니다.<br><strong>밖으로 나가기 전, 검증하고 승인할 구조가 없었다는 점입니다.</strong>"</p>
+      <p class="cases-closer-text"><strong>밖으로 나가기 전, 검증하고 승인할 구조가 없었다는 점입니다.</strong></p>
       <a href="#partner" class="btn btn-primary" style="flex-shrink:0">파일럿 신청하기 →</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ SECTION 4: SOLUTION ═══ -->
+<!-- PAIN -->
 <section id="pain" class="sec sec-bg bt">
   <div class="wrap">
     <div class="prob-three rev">
@@ -669,6 +662,8 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
     </div>
   </div>
 </section>
+
+
 
 <section id="solution" class="sec sec-white bt">
   <div class="wrap">
