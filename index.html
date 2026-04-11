@@ -161,7 +161,8 @@ p{color:var(--t2);line-height:1.75}
 .mvp-step{display:flex;flex-direction:column;padding:14px 20px 14px 0;cursor:pointer;transition:all .15s;position:relative;border-bottom:1px solid var(--bd2)}
 .mvp-step.active .mvp-step-title{color:#000;font-weight:800}
 .mvp-step.active::before{content:'';position:absolute;right:-1px;top:0;bottom:0;width:2px;background:var(--navy)}
-.mvp-step-num{font-family:var(--mono);font-size:9.5px;font-weight:500;color:var(--t3);margin-bottom:4px;letter-spacing:.06em}
+.mvp-step-num{font-family:var(--mono);font-size:10px;font-weight:800;color:var(--bd);margin-bottom:5px;letter-spacing:.04em;transition:color .2s}
+.mvp-step.active .mvp-step-num{color:var(--navy)}
 .mvp-step-title{font-size:13px;font-weight:600;color:var(--t2);letter-spacing:-.02em;transition:color .2s;line-height:1.35}
 .mvp-step-desc{font-size:12px;color:var(--t2);line-height:1.6;margin-top:6px;display:none}
 .mvp-step.active .mvp-step-desc{display:block}
@@ -302,38 +303,113 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
   .target-grid{grid-template-columns:1fr 1fr}
   .wf-content.on{grid-template-columns:200px 1fr}
   .two-col{grid-template-columns:1fr}
-  .asis-flow{grid-template-columns:repeat(3,1fr)}
+  .prob-three{grid-template-columns:1fr 1fr 1fr}
+  .hero-ui-screen{height:380px}
+  .happ-sub{font-size:9px}
 }
 @media(max-width:640px){
-  h1{font-size:32px;letter-spacing:-.03em;word-break:keep-all;text-align:center}
-  h2{font-size:22px;word-break:keep-all}
-  .sec,.comp-section,.use-section,.target-section,.form-section,.faq-section{padding:60px 20px}
-  .wf-section{padding:60px 0}
-  .wf-inner{padding:0 20px}
-  .sec-security{padding:60px 20px}
-  #hero{padding:96px 20px 0}
-  .wrap,.wrap-sm{padding:0 20px}
-  .hero-sub{font-size:15px;text-align:center}
-  .hero-btns{flex-direction:column;align-items:center}
-  .hero-btns .btn{width:100%;max-width:320px;justify-content:center}
-  .hv-screen{height:280px}
-  .pain-cards,.cases-grid,.sol-cards,.comp-grid{grid-template-columns:1fr}
-  .use-grid{grid-template-columns:1fr 1fr}
-  .security-grid{grid-template-columns:1fr}
-  .target-grid{grid-template-columns:1fr}
-  .fg2{grid-template-columns:1fr}
-  .asis-flow{grid-template-columns:1fr 1fr}
-  .wf-content.on{grid-template-columns:1fr}
-  .mvp-steps{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid var(--bd);padding-bottom:0}
-  .mvp-step{min-width:110px;flex-shrink:0;border-bottom:none;padding:10px 14px}
-  .mvp-step.active::before{right:auto;left:0;top:auto;bottom:-1px;width:100%;height:2px}
+  /* ── TYPOGRAPHY ── */
+  h1{font-size:28px;letter-spacing:-.03em;word-break:keep-all;text-align:center;line-height:1.15}
+  h2{font-size:20px;word-break:keep-all;line-height:1.25}
+  h3{font-size:13px}
+  .eyebrow{font-size:9px}
+
+  /* ── LAYOUT ── */
+  .sec,.comp-section,.use-section,.target-section,.form-section,.faq-section{padding:52px 18px}
+  .wf-section{padding:52px 0}
+  .wf-inner{padding:0 18px}
+  .sec-security{padding:52px 18px}
+  #hero{padding:84px 18px 0}
+  .wrap,.wrap-sm{padding:0 18px}
+
+  /* ── NAV ── */
+  #nav{padding:0 18px}
+
+  /* ── HERO ── */
+  .hero-sub{font-size:14px;text-align:center;line-height:1.7;margin-top:14px}
+  .hero-btns{flex-direction:column;align-items:center;gap:10px;margin-top:24px}
+  .hero-btns .btn{width:100%;max-width:300px;justify-content:center;font-size:13px;padding:12px 20px}
+  .hero-ui-wrap{margin:40px auto -24px}
+  .hero-ui-screen{height:320px}
+  .happ-sub{display:none}
+  .happ-right>div:last-child{display:none}
+  .hero-panel-right{display:none!important}
+
+  /* ── HERO UI SCREEN: 패널 숨기고 문서만 ── */
+  .hero-ui-screen > div:last-child > div:last-child{display:none}
+
+  /* ── CASES ── */
+  .cases-grid{grid-template-columns:1fr}
+  .case-card{padding:20px}
+  .case-title{font-size:15px}
+  .cases-closer{flex-direction:column;text-align:center;padding:20px}
+  .cases-closer .btn{width:100%;max-width:260px;justify-content:center}
+
+  /* ── PAIN ── */
+  .prob-three{grid-template-columns:1fr;gap:28px}
+  .prob-divider{display:none}
+  .prob-num{font-size:48px}
+  .prob-label{font-size:14px}
+  .prob-desc{font-size:13px}
+
+  /* ── SOLUTION ── */
+  .sol-cards{grid-template-columns:1fr}
+  .sol-card{padding:22px}
+
+  /* ── WORKFLOW ── */
+  .wf-tabs{width:100%;border-radius:10px}
+  .wf-tab{flex:1;text-align:center;font-size:12.5px;padding:9px 10px}
+  .wf-content.on{grid-template-columns:1fr;gap:0}
+  .mvp-steps{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid var(--bd);padding-bottom:0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .mvp-steps::-webkit-scrollbar{display:none}
+  .mvp-step{min-width:100px;flex-shrink:0;border-bottom:none;padding:10px 12px;flex-direction:column;align-items:center;text-align:center}
+  .mvp-step.active::before{right:auto;left:0;top:auto;bottom:-1px;width:100%;height:2px;background:var(--navy)}
+  .mvp-step-num{margin-bottom:4px;font-size:9px}
+  .mvp-step-title{font-size:11px;text-align:center}
   .mvp-step-desc{display:none!important}
-  .mvp-screen-wrap{padding-left:0;padding-top:16px}
-  .mvp-screen2{height:380px}
-  .cta-btns{flex-direction:column;align-items:center}
-  .cta-btns .btn{width:100%;max-width:320px;justify-content:center}
-  .footer-inner{flex-direction:column;text-align:center}
-  #finalcta{padding:80px 20px}
+  .mvp-screen-wrap{padding-left:0;padding-top:14px}
+  .mvp-screen2{height:340px}
+
+  /* ── COMPARISON TABLE ── */
+  .comp-table-head,.comp-table-row{grid-template-columns:1fr 56px 56px 72px}
+  .cth-feature,.ctr-feature{padding:10px 12px;font-size:11.5px}
+  .cth-col{padding:10px 2px;font-size:9px}
+  .ctr-val{padding:10px 0}
+  .cv-yes,.cv-no,.cv-partial{width:20px;height:20px;font-size:11px}
+
+  /* ── USE ── */
+  .use-grid{grid-template-columns:1fr 1fr}
+
+  /* ── TARGET ── */
+  .target-grid{grid-template-columns:1fr}
+  .tc{padding:18px}
+
+  /* ── SECURITY ── */
+  .security-grid{grid-template-columns:1fr}
+  .sec-card{padding:20px}
+  .security-h2{font-size:22px}
+
+  /* ── PARTNER FORM ── */
+  .two-col{grid-template-columns:1fr;gap:32px}
+  .form-card{padding:22px 18px}
+  .fg2{grid-template-columns:1fr}
+  .pb-box{padding:18px}
+  .form-btn{font-size:13px;padding:12px}
+
+  /* ── COMP GRID ── */
+  .comp-grid{grid-template-columns:1fr}
+
+  /* ── FAQ ── */
+  .faq-q{font-size:14px}
+
+  /* ── FINAL CTA ── */
+  #finalcta{padding:72px 18px}
+  .cta-btns{flex-direction:column;align-items:center;gap:10px}
+  .cta-btns .btn{width:100%;max-width:300px;justify-content:center}
+
+  /* ── FOOTER ── */
+  footer{padding:22px 18px}
+  .footer-inner{flex-direction:column;text-align:center;gap:8px}
 }
 
 /* ── PROBLEM THREE ── */
@@ -402,7 +478,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
 }
 /* ── HERO UI ── */
 .hero-ui-wrap{margin:64px auto -60px;max-width:960px;position:relative}
-.hero-ui-screen{background:#fff;border:1px solid #ccc9c2;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;height:460px;display:flex;flex-direction:column}
+.hero-ui-screen{background:#fff;border:1px solid #ccc9c2;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;height:460px;display:flex;flex-direction:column;min-height:0}
 .happ-bar{height:42px;background:#fff;border-bottom:1px solid #eeeced;display:flex;align-items:center;padding:0 16px;gap:9px;flex-shrink:0}
 .happ-logo{width:20px;height:20px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .happ-name{font-size:12px;font-weight:800;color:#000}
@@ -502,7 +578,7 @@ footer{background:var(--white);border-top:1px solid var(--bd2);padding:28px 40px
             </div>
           </div>
           <!-- Red Flag 패널 -->
-          <div style="width:210px;flex-shrink:0;border-left:1px solid #eeeced;background:#fff;display:flex;flex-direction:column;overflow:hidden">
+          <div class="hero-panel-right" style="width:210px;flex-shrink:0;border-left:1px solid #eeeced;background:#fff;display:flex;flex-direction:column;overflow:hidden">
             <div style="padding:12px 14px;border-bottom:1px solid #f3f4f6;display:flex;align-items:center;justify-content:space-between">
               <span style="font-size:12px;font-weight:800;color:#000">Red Flag</span>
               <span style="font-size:9px;font-weight:700;background:#fef2f2;color:#dc2626;padding:2px 8px;border-radius:100px;border:1px solid #fecaca">5건</span>
@@ -1234,33 +1310,18 @@ function goMvpScene(role, n){
   }
   if(steps[n]) steps[n].classList.add('active');
 
-  // scroll step into view on mobile
+  // scroll step horizontally within container only
   if(steps[n] && window.innerWidth < 960){
-    steps[n].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    const stepsContainer = stepsEl;
+    const stepEl = steps[n];
+    const containerLeft = stepsContainer.getBoundingClientRect().left;
+    const stepLeft = stepEl.getBoundingClientRect().left;
+    const offset = stepLeft - containerLeft - (stepsContainer.offsetWidth/2) + (stepEl.offsetWidth/2);
+    stepsContainer.scrollLeft += offset;
   }
 }
 
-// Auto-advance MVP scenes
-let mvpTimers = {};
-function startMvpAuto(role){
-  clearInterval(mvpTimers[role]);
-  mvpTimers[role] = setInterval(()=>{
-    const next = (mvpState[role]+1) % mvpScenes[role].length;
-    goMvpScene(role, next);
-  }, 4500);
-}
-function stopMvpAuto(role){ clearInterval(mvpTimers[role]); }
-
-// Start auto on both
-startMvpAuto('writer');
-startMvpAuto('approver');
-
-// Pause on hover
-document.querySelectorAll('.mvp-screen-wrap').forEach((el,i)=>{
-  const role = i===0?'writer':'approver';
-  el.addEventListener('mouseenter',()=>stopMvpAuto(role));
-  el.addEventListener('mouseleave',()=>startMvpAuto(role));
-});
+// MVP auto-advance disabled to prevent scroll hijacking
 
 // ── FAQ ──
 function toggleFaq(btn){
